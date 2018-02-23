@@ -15,15 +15,14 @@ public class TestAbstractScenario extends AbstractScenarioTest {
 
 	@Override
 	public void test(String out) {
-		Assert.assertEquals("І&й\"'(§и!за)-", out);
+		Assert.assertEquals("пїЅ&пїЅ\"'(пїЅпїЅ!пїЅпїЅ)-", out);
 	}
 
 	@SuppressWarnings("resource")
 	@Override
 	public void run() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("І&й\"'(§и!за)-");
-		scan.nextLine();
+		System.out.print("пїЅ&пїЅ\"'(пїЅпїЅ!пїЅпїЅ)-");
 		System.out.print("BB");
 		scan.nextLine();
 		System.out.print("CC");
