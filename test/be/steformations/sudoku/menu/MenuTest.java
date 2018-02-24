@@ -115,4 +115,14 @@ public class MenuTest {
 		Assert.assertSame(item1, menu.getSelected());
 	}
 
+	/**
+	 * Test la valeur de l'item sectionné après init().
+	 */
+	@Test
+	public void testSelectedAferInit() {
+		menu.select("a");
+		menu.init();
+		Assert.assertNull(menu.getSelected());
+	}
+
 }
