@@ -103,4 +103,16 @@ public class MenuTest {
 		Assert.assertSame(item1, menu.getSelected());
 	}
 
+	/**
+	 * Test la valeur de l'item sectionné après un sélection non valide.
+	 */
+	@Test
+	public void testSelectedAferSelect_KO() {
+		menu.select("s");
+		Assert.assertNull(menu.getSelected());
+		menu.select("a");
+		menu.select("s");
+		Assert.assertSame(item1, menu.getSelected());
+	}
+
 }
