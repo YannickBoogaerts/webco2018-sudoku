@@ -77,5 +77,13 @@ public class MenuTest {
 		Assert.assertSame(item3, menu.getItem("z"));
 		Assert.assertSame(item2, menu.getItem("c"));
 	}
+	
+	/**
+	 * Test getItem() avec return null.
+	 */
+	@Test
+	public void tesGetItemReturnNull() {
+		Assert.assertNull(menu.getItem("d"));
+	}
 
 }
