@@ -3,6 +3,7 @@ package be.steformations.sudoku.menu;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 /**
  * Regroupe les tests sur les spécifications de la classe Menu.
  * 
@@ -20,10 +21,10 @@ public class MenuTest {
 	/**
 	 * Instancie le Menu et les 4 items et ajoute ceux-ci au menu.
 	 * <ul>
-	 * <li>a  lib1</li>
-	 * <li>c  lib2</li>
-	 * <li>z  lib3</li>
-	 * <li>b  lib4</li>
+	 * <li>a lib1</li>
+	 * <li>c lib2</li>
+	 * <li>z lib3</li>
+	 * <li>b lib4</li>
 	 * </ul>
 	 */
 	@Before
@@ -44,6 +45,20 @@ public class MenuTest {
 	 */
 	@Test
 	public void testGetItem() {
+		Assert.assertSame(item1, menu.getItem("a"));
+		Assert.assertSame(item4, menu.getItem("b"));
+		Assert.assertSame(item3, menu.getItem("z"));
+		Assert.assertSame(item2, menu.getItem("c"));
+	}
+
+	/**
+	 * Test l'ajout d'un Item.
+	 */
+	@Test
+	public void testAddItem() {
+		Item item = new Item("d", "libel 5");
+		menu.add(item);
+		Assert.assertSame(item, menu.getItem("d"));
 		Assert.assertSame(item1, menu.getItem("a"));
 		Assert.assertSame(item4, menu.getItem("b"));
 		Assert.assertSame(item3, menu.getItem("z"));
