@@ -64,5 +64,18 @@ public class MenuTest {
 		Assert.assertSame(item3, menu.getItem("z"));
 		Assert.assertSame(item2, menu.getItem("c"));
 	}
+	
+	/**
+	 * Test le remplacement d'un Item.
+	 */
+	@Test
+	public void testReplaceItem() {
+		Item item = new Item("a", "libel 5");
+		menu.add(item);
+		Assert.assertSame(item, menu.getItem("a"));
+		Assert.assertSame(item4, menu.getItem("b"));
+		Assert.assertSame(item3, menu.getItem("z"));
+		Assert.assertSame(item2, menu.getItem("c"));
+	}
 
 }
