@@ -16,20 +16,45 @@ public class MainTest {
 	private Scenario scenario;
 
 	/**
-	 * A l'ouverture l'application affiche le titre.
+	 * A l'ouverture l'application affiche le titre et une grille vide.
 	 * 
 	 * <pre>
-	"    SUDOKU"
-	"    ======"
+	"          SUDOKU        "
+	"          ======        "
+	"+-------+-------+-------+"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"+-------+-------+-------+"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"+-------+-------+-------+"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"+-------+-------+-------+"
 	 * </pre>
-	 * 
 	 */
 	@Test
 	public void testTitre() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("    SUDOKU").append(System.lineSeparator());
-		builder.append("    ======").append(System.lineSeparator());
-		scenario.testAffichago(0, builder.toString());
+		builder.append("          SUDOKU        " ).append(System.lineSeparator());
+		builder.append("          ======        " ).append(System.lineSeparator());
+		builder.append("+-------+-------+-------+").append(System.lineSeparator());
+		builder.append("| . . . | . . . | . . . |").append(System.lineSeparator());
+		builder.append("| . . . | . . . | . . . |").append(System.lineSeparator());
+		builder.append("| . . . | . . . | . . . |").append(System.lineSeparator());
+		builder.append("+-------+-------+-------+").append(System.lineSeparator());
+		builder.append("| . . . | . . . | . . . |").append(System.lineSeparator());
+		builder.append("| . . . | . . . | . . . |").append(System.lineSeparator());
+		builder.append("| . . . | . . . | . . . |").append(System.lineSeparator());
+		builder.append("+-------+-------+-------+").append(System.lineSeparator());
+		builder.append("| . . . | . . . | . . . |").append(System.lineSeparator());
+		builder.append("| . . . | . . . | . . . |").append(System.lineSeparator());
+		builder.append("| . . . | . . . | . . . |").append(System.lineSeparator());
+		builder.append("+-------+-------+-------+").append(System.lineSeparator());
+		this.scenario.testAffichago(0, builder.toString());
 	}
 
 	@Before
