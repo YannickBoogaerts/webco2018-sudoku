@@ -94,4 +94,13 @@ public class MenuTest {
 		Assert.assertNull(menu.getSelected());
 	}
 
+	/**
+	 * Test la valeur de l'item sectionné après un sélection valide.
+	 */
+	@Test
+	public void testSelectedAferSelect_OK() {
+		menu.select("a");
+		Assert.assertSame(item1, menu.getSelected());
+	}
+
 }
