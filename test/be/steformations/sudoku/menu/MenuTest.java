@@ -1,5 +1,7 @@
 package be.steformations.sudoku.menu;
 
+import java.util.Iterator;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -123,6 +125,21 @@ public class MenuTest {
 		menu.select("a");
 		menu.init();
 		Assert.assertNull(menu.getSelected());
+	}
+	
+	/**
+	 * Test : "getItems() Retourne les items dans l'ordre d'ajout des clés."
+	 */
+	@Test
+	public void testGetItems(){
+		Item item = new Item("a", "libel 5");
+		menu.add(item);
+		Iterator<Item> iterator = menu.getItems().iterator();
+		Assert.assertSame(item, iterator.next());
+		Assert.assertSame(item2, iterator.next());
+		Assert.assertSame(item3, iterator.next());
+		Assert.assertSame(item4, iterator.next());
+
 	}
 
 }
