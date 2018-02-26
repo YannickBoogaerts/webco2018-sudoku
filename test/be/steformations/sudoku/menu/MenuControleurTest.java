@@ -88,4 +88,35 @@ public class MenuControleurTest {
 
 		assertSame(item1, menu.getSelected());
 	}
+
+	/**
+	 * Test Scenario 2 : l'utilisateur annule l'opération à la première saisie.
+	 * <ul>
+	 * <li>L'ordinateur affiche :
+	 * 
+	 * <pre>
+	 * a: item 1
+	 * b: item 2
+	 * Entrer un choix ('<'pour annuler ) :
+	 * </pre>
+	 * 
+	 * </li>
+	 * <li>l'utilisateur entre "<"</li>
+	 * <li>fin du scénario</li>
+	 * </ul>
+	 * A la fin du scénario l'item sélectionnée dans le menu est null
+	 */
+	@Test
+	public void testScenario2() {
+		Scenario scenario = new Scenario(app);
+		StringBuilder ecran0 = new StringBuilder();
+		ecran0.append("a : item 1").append(System.lineSeparator());
+		ecran0.append("b : item 2").append(System.lineSeparator());
+		ecran0.append("Entrer un choix ('<'pour annuler ) :");
+
+		scenario.setInput(Arrays.asList(new String[] { "<" }));
+		scenario.testAffichago(0, ecran0.toString());
+
+		assertNull(menu.getSelected());
+	}
 }
