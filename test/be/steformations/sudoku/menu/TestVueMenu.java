@@ -78,4 +78,24 @@ public class TestVueMenu {
 		scenario.testAffichago(1, builder.toString());
 		
 	}
+	
+	/**
+	 * test si la saisie avec un message null et un prompt "le prompt2 :" affiche 
+	 * <pre>
+	 * le prompt2 :
+	 * </pre>
+	 * et fait une saisie sur System.in
+	 */
+
+	@Test
+	public void testSaisieSansMessage() {
+		menu.add(new Item("a", "toto"));
+		menu.add(new Item("b", "dédé"));
+		menu.add(new Item("q", "quitter"));
+		StringBuilder builder = new StringBuilder();
+		builder.append("le prompt2 :");
+		scenario.testAffichago(2, builder.toString());
+		
+	}
+	
 }
