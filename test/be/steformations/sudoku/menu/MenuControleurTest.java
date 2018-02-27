@@ -170,4 +170,36 @@ public class MenuControleurTest {
 		scenario.setInput(Arrays.asList(new String[] { "z","","b" }));
 		scenario.testAffichago(0, ecran0.toString());
 	}
+	@Test
+	public void testScenario3_1() {
+		Scenario scenario = new Scenario(app);
+		StringBuilder ecran0 = new StringBuilder();
+		ecran0.append("a : item 1").append(System.lineSeparator());
+		ecran0.append("b : item 2").append(System.lineSeparator());
+		ecran0.append("'z' n'est pas un choix correct").append(System.lineSeparator());
+		ecran0.append("Entrer un choix ('<'pour annuler ) :");
+		
+		scenario.setInput(Arrays.asList(new String[] { "z","","b" }));
+		scenario.testAffichago(1, ecran0.toString());
+	}
+	@Test
+	public void testScenario3_2() {
+		Scenario scenario = new Scenario(app);
+		StringBuilder ecran0 = new StringBuilder();
+		ecran0.append("a : item 1").append(System.lineSeparator());
+		ecran0.append("b : item 2").append(System.lineSeparator());
+		ecran0.append("'' n'est pas un choix correct").append(System.lineSeparator());
+		ecran0.append("Entrer un choix ('<'pour annuler ) :");
+		
+		scenario.setInput(Arrays.asList(new String[] { "z","","b" }));
+		scenario.testAffichago(2, ecran0.toString());
+	}
+	@Test
+	public void testScenario3_3() {
+		Scenario scenario = new Scenario(app);
+		StringBuilder ecran0 = new StringBuilder();
+		scenario.setInput(Arrays.asList(new String[] { "z","","b" }));
+		scenario.testAffichago(3,"");
+		assertSame(item2, menu.getSelected());
+	}
 }
