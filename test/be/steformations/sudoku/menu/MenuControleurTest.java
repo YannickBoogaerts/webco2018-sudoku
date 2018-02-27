@@ -202,4 +202,53 @@ public class MenuControleurTest {
 		scenario.testAffichago(3,"");
 		assertSame(item2, menu.getSelected());
 	}
+	
+	/**
+	 * Test Scenario 4 : l'utilisateur entre deux valeurs non valides avant d'annuler l'opération.
+	 * <ul>
+	 * <li>L'ordinateur affiche :
+	 * 
+	 * <pre>
+	 * a: item 1
+	 * b: item 2
+	 * Entrer un choix ('<'pour annuler ) :
+	 * </pre>
+	 * 
+	 * </li>
+	 * <li>l'utilisateur entre "z"</li>
+	 * <li>L'ordinateur affiche :
+	 * 
+	 * <pre>
+	 * a: item 1
+	 * b: item 2
+	 * 'z' n'est pas un choix correct
+	 * Entrer un choix ('<'pour annuler ) :
+	 * </pre>
+	 * 
+	 * </li>
+	 * <li>l'utilisateur entre ""</li>
+	 * <li>L'ordinateur affiche :
+	 * 
+	 * <pre>
+	 * a: item 1
+	 * b: item 2
+	 * '' n'est pas un choix correct
+	 * Entrer un choix ('<'pour annuler ) :
+	 * </pre>
+	 * 
+	 * </li>
+	 * <li>l'utilisateur entre "<"</li>
+	 * <li>fin du scénario</li>
+	 * </ul>
+	 * A la fin du scénario l'item sélectionnée dans le menu est item 2
+	 */
+	
+	@Test
+	public void testScenario4() {
+		Scenario scenario = new Scenario(app);
+		StringBuilder ecran0 = new StringBuilder();
+		scenario.setInput(Arrays.asList(new String[] { "z","","<" }));
+		scenario.testAffichago(3,"");
+		assertNull(menu.getSelected());
+	}
 }
