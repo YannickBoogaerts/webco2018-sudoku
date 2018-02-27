@@ -119,4 +119,55 @@ public class MenuControleurTest {
 
 		assertNull(menu.getSelected());
 	}
+	
+	/**
+	 * Test Scenario 3 : l'utilisateur entre deux valeurs non valides avant une entrée valide.
+	 * <ul>
+	 * <li>L'ordinateur affiche :
+	 * 
+	 * <pre>
+	 * a: item 1
+	 * b: item 2
+	 * Entrer un choix ('<'pour annuler ) :
+	 * </pre>
+	 * 
+	 * </li>
+	 * <li>l'utilisateur entre "z"</li>
+	 * <li>L'ordinateur affiche :
+	 * 
+	 * <pre>
+	 * a: item 1
+	 * b: item 2
+	 * 'z' n'est pas un choix correct
+	 * Entrer un choix ('<'pour annuler ) :
+	 * </pre>
+	 * 
+	 * </li>
+	 * <li>l'utilisateur entre ""</li>
+	 * <li>L'ordinateur affiche :
+	 * 
+	 * <pre>
+	 * a: item 1
+	 * b: item 2
+	 * '' n'est pas un choix correct
+	 * Entrer un choix ('<'pour annuler ) :
+	 * </pre>
+	 * 
+	 * </li>
+	 * <li>l'utilisateur entre "b"</li>
+	 * <li>fin du scénario</li>
+	 * </ul>
+	 * A la fin du scénario l'item sélectionnée dans le menu est item 2
+	 */
+	@Test
+	public void testScenario3_0() {
+		Scenario scenario = new Scenario(app);
+		StringBuilder ecran0 = new StringBuilder();
+		ecran0.append("a : item 1").append(System.lineSeparator());
+		ecran0.append("b : item 2").append(System.lineSeparator());
+		ecran0.append("Entrer un choix ('<'pour annuler ) :");
+		
+		scenario.setInput(Arrays.asList(new String[] { "z","","b" }));
+		scenario.testAffichago(0, ecran0.toString());
+	}
 }
