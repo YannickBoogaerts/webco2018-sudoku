@@ -1,6 +1,7 @@
 package be.steformations.sudoku.menu;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 import java.util.Arrays;
 
