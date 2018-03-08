@@ -19,7 +19,7 @@ public class TestVueMenu {
 		public void run() {
 			vueMenu = new VueMenu();
 			 vueMenu.setMenu(menu);
-			vueMenu.affiche();
+			vueMenu.afficher();
 			new Scanner(System.in).nextLine();
 			vueMenu.saisir("un message", "le prompt :");
 			vueMenu.saisir(null, "le prompt2 :");

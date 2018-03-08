@@ -1,5 +1,7 @@
 package be.steformations.sudoku.menu;
 
+import java.util.GregorianCalendar;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -31,5 +33,22 @@ public class ItemTest {
 		Assert.assertEquals("b", key);
 		String libel = item.getLibel();
 		Assert.assertEquals("libellé 2", libel);
+	}
+	
+	/**
+	 * test le getter et le setter du value de l'Item
+	 */
+	@Test
+	public void testGetSetValueString(){
+		Item item = new Item("b", "libellé 2");
+		item.setValue("toto");
+		Assert.assertEquals("toto", item.getValue());
+	}
+	@Test
+	public void testGetSetValueCalendar(){
+		Item item = new Item("b", "libellé 2");
+		GregorianCalendar date = new GregorianCalendar();
+		item.setValue(date);
+		Assert.assertEquals(date, item.getValue());
 	}
 }
